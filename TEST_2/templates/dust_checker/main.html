@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="row justify-content-center mb-2">
+    <div class="col-md-4">
+        <div class="card" >
+            <img src="https://cdn.pixabay.com/photo/2017/07/19/01/40/skyscraper-2517650_1280.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">미세먼지 수치</h5>
+                <div class="mb-1 text-muted">{{ pm10grade }}</div>
+                <div class="mb-1 text-muted">{{ pm10value}}</div>
+                <a href="{% url 'dust_checker:detail' itemCode='pm10' %}" class="btn btn-primary">>> 자세히</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2014/12/15/17/16/volkswagen-569315_1280.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">초 미세먼지 수치</h5>
+                <div class="mb-1 text-muted">{{ pm25grade }}</div>
+                <div class="mb-1 text-muted">{{ pm25value}}</div>
+                <a href="{% url 'dust_checker:detail' itemCode='pm25' %}" class="btn btn-primary">>> 자세히</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
